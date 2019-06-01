@@ -1,0 +1,44 @@
+<h1>
+  Edit quote #<%= @quote.id %>
+</h1>
+
+<hr>
+
+<!-- Form quote start -->
+<form action="/update_quote/<%= @quote.id %>" method="post">
+<!-- Form quote end -->
+
+  <!-- Label and input for body start -->
+  <div class="form-group">
+    <label for="body">
+      Body
+    </label>
+
+    <!-- Input for body start -->
+    <input type="text" id="body" name="body" class="form-control" value="<%= @quote.body %>">
+    <!-- Input for body end -->
+  </div>
+  <!-- Label and input for body end -->
+
+  <!-- Label and input for author start -->
+  <div class="form-group">
+    <label for="author">
+      Author
+    </label>
+
+    <!-- Input for author start -->
+    <input type="text" id="author" name="author" class="form-control" value="<%= @quote.author %>">
+    <!-- Input for author end -->
+  </div>
+  <!-- Label and input for author end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update quote
+  </button>
+</form>
+
+<hr>
+
+<a href="/quotes">
+  Go back
+</a>

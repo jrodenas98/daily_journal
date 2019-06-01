@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Quote resource:
+
+  # CREATE
+  get("/quotes/new", { :controller => "quotes", :action => "new_form" })
+  post("/create_quote", { :controller => "quotes", :action => "create_row" })
+
+  # READ
+  get("/quotes", { :controller => "quotes", :action => "index" })
+  get("/quotes/:id_to_display", { :controller => "quotes", :action => "show" })
+
+  # UPDATE
+  get("/quotes/:prefill_with_id/edit", { :controller => "quotes", :action => "edit_form" })
+  post("/update_quote/:id_to_modify", { :controller => "quotes", :action => "update_row" })
+
+  # DELETE
+  get("/delete_quote/:id_to_remove", { :controller => "quotes", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the User entry resource:
 
   # CREATE
