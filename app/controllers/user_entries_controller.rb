@@ -60,7 +60,7 @@ class UserEntriesController < ApplicationController
   def update_row
     @user_entry = UserEntry.find(params.fetch("id_to_modify"))
 
-    @user_entry.user_id = params.fetch("user_id")
+    
     @user_entry.prompt_id = params.fetch("prompt_id")
     @user_entry.response = params.fetch("response")
     @user_entry.headline = params.fetch("headline")
