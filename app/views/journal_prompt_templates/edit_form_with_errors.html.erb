@@ -48,7 +48,7 @@
     </label>
 
     <!-- Input for journal_method_id start -->
-    <input type="text" id="journal_method_id" name="journal_method_id" class="form-control" value="<%= @journal_prompt.journal_method_id %>">
+    <%= select_tag(:journal_method_id, options_from_collection_for_select(JournalMethod.all, :id, :name, @journal_prompt.journal_method_id), :class => "form-control") %>
     <!-- Input for journal_method_id end -->
   </div>
   <!-- Label and input for journal_method_id end -->
