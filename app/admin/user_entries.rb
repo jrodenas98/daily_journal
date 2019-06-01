@@ -1,4 +1,6 @@
 ActiveAdmin.register UserEntry do
+
+ permit_params :user_id, :prompt_id, :response, :headline
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
