@@ -13,17 +13,21 @@
 
       <!-- Edit link user_entry start -->
       <div class="col">
-        <a href="/user_entries/<%= @user_entry.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit user entry
-        </a>
+        <% if current_user == @user_entry.user %>
+          <a href="/user_entries/<%= @user_entry.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit user_entry
+          </a>
+        <% end %>
       </div>
       <!-- Edit link user_entry end -->
 
       <!-- Delete link user_entry start -->
       <div class="col">
-        <a href="/delete_user_entry/<%= @user_entry.id %>" class="btn btn-block btn-outline-secondary">
-          Delete user entry
-        </a>
+        <% if current_user == @user_entry.user %>
+          <a href="/delete_user_entry/<%= @user_entry.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete user_entry
+          </a>
+        <% end %>
       </div>
       <!-- Delete link user_entry end -->
     </div>

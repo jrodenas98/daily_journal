@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_user_entry_from_prompt/<%= user_entry.id %>">
-          Delete
-        </a>
+        <%if current_user == user_entry.user %>
+          <a href="/delete_user_entry_from_journal_prompt/<%= user_entry.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>
