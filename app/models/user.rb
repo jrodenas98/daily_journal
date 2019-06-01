@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :user_journals,
+             :class_name => "UserEntry",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
