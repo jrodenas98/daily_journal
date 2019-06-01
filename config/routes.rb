@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the User entry resource:
+
+  # CREATE
+  get("/user_entries/new", { :controller => "user_entries", :action => "new_form" })
+  post("/create_user_entry", { :controller => "user_entries", :action => "create_row" })
+
+  # READ
+  get("/user_entries", { :controller => "user_entries", :action => "index" })
+  get("/user_entries/:id_to_display", { :controller => "user_entries", :action => "show" })
+
+  # UPDATE
+  get("/user_entries/:prefill_with_id/edit", { :controller => "user_entries", :action => "edit_form" })
+  post("/update_user_entry/:id_to_modify", { :controller => "user_entries", :action => "update_row" })
+
+  # DELETE
+  get("/delete_user_entry/:id_to_remove", { :controller => "user_entries", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Journal prompt resource:
 
   # CREATE

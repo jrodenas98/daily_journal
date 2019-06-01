@@ -1,0 +1,68 @@
+<h1>
+  Edit user entry #<%= @user_entry.id %>
+</h1>
+
+<hr>
+
+<!-- Form user_entry start -->
+<form action="/update_user_entry/<%= @user_entry.id %>" method="post">
+<!-- Form user_entry end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @user_entry.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for prompt_id start -->
+  <div class="form-group">
+    <label for="prompt_id">
+      Prompt
+    </label>
+
+    <!-- Input for prompt_id start -->
+    <input type="text" id="prompt_id" name="prompt_id" class="form-control" value="<%= @user_entry.prompt_id %>">
+    <!-- Input for prompt_id end -->
+  </div>
+  <!-- Label and input for prompt_id end -->
+
+  <!-- Label and input for response start -->
+  <div class="form-group">
+    <label for="response">
+      Response
+    </label>
+
+    <!-- Input for response start -->
+    <input type="text" id="response" name="response" class="form-control" value="<%= @user_entry.response %>">
+    <!-- Input for response end -->
+  </div>
+  <!-- Label and input for response end -->
+
+  <!-- Label and input for headline start -->
+  <div class="form-group">
+    <label for="headline">
+      Headline
+    </label>
+
+    <!-- Input for headline start -->
+    <textarea id="headline" name="headline" class="form-control" rows="3"><%= @user_entry.headline %></textarea>
+    <!-- Input for headline end -->
+  </div>
+  <!-- Label and input for headline end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update user entry
+  </button>
+</form>
+
+<hr>
+
+<a href="/user_entries">
+  Go back
+</a>

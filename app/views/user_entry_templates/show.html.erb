@@ -1,0 +1,91 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      User entry #<%= @user_entry.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/user_entries" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link user_entry start -->
+      <div class="col">
+        <a href="/user_entries/<%= @user_entry.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit user entry
+        </a>
+      </div>
+      <!-- Edit link user_entry end -->
+
+      <!-- Delete link user_entry start -->
+      <div class="col">
+        <a href="/delete_user_entry/<%= @user_entry.id %>" class="btn btn-block btn-outline-secondary">
+          Delete user entry
+        </a>
+      </div>
+      <!-- Delete link user_entry end -->
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @user_entry.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Prompt
+      </dt>
+      <!-- Display prompt_id start -->
+      <dd>
+        <%= @user_entry.prompt_id %>
+      </dd>
+      <!-- Display prompt_id end -->
+
+      <dt>
+        Response
+      </dt>
+      <!-- Display response start -->
+      <dd>
+        <%= @user_entry.response %>
+      </dd>
+      <!-- Display response end -->
+
+      <dt>
+        Headline
+      </dt>
+      <!-- Display headline start -->
+      <dd>
+        <%= @user_entry.headline %>
+      </dd>
+      <!-- Display headline end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@user_entry.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@user_entry.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
