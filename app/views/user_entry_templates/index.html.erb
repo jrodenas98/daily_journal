@@ -66,13 +66,21 @@
 
         <!-- Display user_entry.user_id start -->
         <td>
-          <%= user_entry.user.created_at %>
+          <% if user_entry.user.present? %>
+            <a href="/users/<%= user_entry.user.id %>">
+              <%= user_entry.user.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display user_entry.user_id end -->
 
         <!-- Display user_entry.prompt_id start -->
         <td>
-          <%= user_entry.prompt.prompt_text %>
+          <% if user_entry.prompt.present? %>
+            <a href="/journal_prompts/<%= user_entry.prompt.id %>">
+              <%= user_entry.prompt.prompt_text %>
+            </a>
+          <% end %>
         </td>
         <!-- Display user_entry.prompt_id end -->
 

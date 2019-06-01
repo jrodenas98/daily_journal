@@ -38,7 +38,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @user_entry.user_id %>
+        <% if @user_entry.user.present? %>
+          <a href="/users/<%= @user_entry.user_id %>">
+            <%= @user_entry.user.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -47,7 +51,11 @@
       </dt>
       <!-- Display prompt_id start -->
       <dd>
-        <%= @user_entry.prompt_id %>
+        <% if @user_entry.prompt.present? %>
+          <a href="/journal_prompts/<%= @user_entry.prompt_id %>">
+            <%= @user_entry.prompt.prompt_text %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display prompt_id end -->
 

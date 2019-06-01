@@ -74,7 +74,11 @@
 
         <!-- Display journal_prompt.journal_method_id start -->
         <td>
-          <%= journal_prompt.journal_method.name %>
+          <% if journal_prompt.journal_method.present? %>
+            <a href="/journal_methods/<%= journal_prompt.journal_method.id %>">
+              <%= journal_prompt.journal_method.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display journal_prompt.journal_method_id end -->
 

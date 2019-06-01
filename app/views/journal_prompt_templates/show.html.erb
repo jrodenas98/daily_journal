@@ -52,7 +52,11 @@
       </dt>
       <!-- Display journal_method_id start -->
       <dd>
-        <%= @journal_prompt.journal_method_id %>
+        <% if @journal_prompt.journal_method.present? %>
+          <a href="/journal_methods/<%= @journal_prompt.journal_method_id %>">
+            <%= @journal_prompt.journal_method.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display journal_method_id end -->
 
