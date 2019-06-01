@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @journal_prompt.user_entries.each do |user_entry| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/user_entries/<%= user_entry.id %>">
           <%= user_entry.user_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == user_entry.user %>
           <a href="/delete_user_entry_from_journal_prompt/<%= user_entry.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="journal_prompt_user_entries_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "journal_prompt_templates/journal_prompt_user_entries_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

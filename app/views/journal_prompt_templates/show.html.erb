@@ -11,46 +11,37 @@
         </a>
       </div>
 
-      <!-- Edit link journal_prompt start -->
       <div class="col">
         <a href="/journal_prompts/<%= @journal_prompt.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit journal prompt
         </a>
       </div>
-      <!-- Edit link journal_prompt end -->
 
-      <!-- Delete link journal_prompt start -->
       <div class="col">
         <a href="/delete_journal_prompt/<%= @journal_prompt.id %>" class="btn btn-block btn-outline-secondary">
           Delete journal prompt
         </a>
       </div>
-      <!-- Delete link journal_prompt end -->
     </div>
 
     <dl>
       <dt>
         Prompt text
       </dt>
-      <!-- Display prompt_text start -->
       <dd>
         <%= @journal_prompt.prompt_text %>
       </dd>
-      <!-- Display prompt_text end -->
 
       <dt>
         Day
       </dt>
-      <!-- Display day start -->
       <dd>
         <%= @journal_prompt.day %>
       </dd>
-      <!-- Display day end -->
 
       <dt>
         Journal method
       </dt>
-      <!-- Display journal_method_id start -->
       <dd>
         <% if @journal_prompt.journal_method.present? %>
           <a href="/journal_methods/<%= @journal_prompt.journal_method_id %>">
@@ -58,33 +49,26 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display journal_method_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@journal_prompt.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@journal_prompt.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "journal_prompt_templates/journal_prompt_user_entries" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

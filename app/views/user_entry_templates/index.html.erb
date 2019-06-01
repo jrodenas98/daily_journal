@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "user_entry_templates/user_entries_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -62,13 +58,10 @@
 
       <% @user_entries.each do |user_entry| %>
       <tr>
-        <!-- Display user_entry.id start -->
         <td>
           <%= user_entry.id %>
         </td>
-        <!-- Display user_entry.id end -->
 
-        <!-- Display user_entry.user_id start -->
         <td>
           <% if user_entry.user.present? %>
             <a href="/users/<%= user_entry.user.id %>">
@@ -76,9 +69,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display user_entry.user_id end -->
 
-        <!-- Display user_entry.prompt_id start -->
         <td>
           <% if user_entry.prompt.present? %>
             <a href="/journal_prompts/<%= user_entry.prompt.id %>">
@@ -86,31 +77,22 @@
             </a>
           <% end %>
         </td>
-        <!-- Display user_entry.prompt_id end -->
 
-        <!-- Display user_entry.response start -->
         <td>
           <%= user_entry.response %>
         </td>
-        <!-- Display user_entry.response end -->
 
-        <!-- Display user_entry.headline start -->
         <td>
           <%= user_entry.headline %>
         </td>
-        <!-- Display user_entry.headline end -->
 
-        <!-- Display user_entry.created_at start -->
         <td>
           <%= time_ago_in_words(user_entry.created_at) %> ago
         </td>
-        <!-- Display user_entry.created_at end -->
 
-        <!-- Display user_entry.updated_at start -->
         <td>
           <%= time_ago_in_words(user_entry.updated_at) %> ago
         </td>
-        <!-- Display user_entry.updated_at end -->
 
         <td>
           <a href="/user_entries/<%= user_entry.id %>">

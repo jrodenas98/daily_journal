@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "journal_method_templates/journal_methods_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -54,35 +50,25 @@
 
       <% @journal_methods.each do |journal_method| %>
       <tr>
-        <!-- Display journal_method.id start -->
         <td>
           <%= journal_method.id %>
         </td>
-        <!-- Display journal_method.id end -->
 
-        <!-- Display journal_method.name start -->
         <td>
           <%= journal_method.name %>
         </td>
-        <!-- Display journal_method.name end -->
 
-        <!-- Display journal_method.description start -->
         <td>
           <%= journal_method.description %>
         </td>
-        <!-- Display journal_method.description end -->
 
-        <!-- Display journal_method.created_at start -->
         <td>
           <%= time_ago_in_words(journal_method.created_at) %> ago
         </td>
-        <!-- Display journal_method.created_at end -->
 
-        <!-- Display journal_method.updated_at start -->
         <td>
           <%= time_ago_in_words(journal_method.updated_at) %> ago
         </td>
-        <!-- Display journal_method.updated_at end -->
 
         <td>
           <a href="/journal_methods/<%= journal_method.id %>">

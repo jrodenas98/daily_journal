@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link user_entry start -->
       <div class="col">
         <% if current_user == @user_entry.user %>
           <a href="/user_entries/<%= @user_entry.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link user_entry end -->
 
-      <!-- Delete link user_entry start -->
       <div class="col">
         <% if current_user == @user_entry.user %>
           <a href="/delete_user_entry/<%= @user_entry.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,14 +26,12 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link user_entry end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @user_entry.user.present? %>
           <a href="/users/<%= @user_entry.user_id %>">
@@ -44,12 +39,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Prompt
       </dt>
-      <!-- Display prompt_id start -->
       <dd>
         <% if @user_entry.prompt.present? %>
           <a href="/journal_prompts/<%= @user_entry.prompt_id %>">
@@ -57,46 +50,35 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display prompt_id end -->
 
       <dt>
         Response
       </dt>
-      <!-- Display response start -->
       <dd>
         <%= @user_entry.response %>
       </dd>
-      <!-- Display response end -->
 
       <dt>
         Headline
       </dt>
-      <!-- Display headline start -->
       <dd>
         <%= @user_entry.headline %>
       </dd>
-      <!-- Display headline end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@user_entry.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@user_entry.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

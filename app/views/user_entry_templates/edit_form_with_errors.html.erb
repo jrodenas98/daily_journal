@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @user_entry.errors.any? %>
   <% @user_entry.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,48 +12,32 @@
 
 <hr>
 
-<!-- Form user_entry start -->
 <form action="/update_user_entry/<%= @user_entry.id %>" method="post">
-<!-- Form user_entry end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for prompt_id start -->
   <div class="form-group">
     <label for="prompt_id">
       Prompt
     </label>
 
-    <!-- Input for prompt_id start -->
     <%= select_tag(:prompt_id, options_from_collection_for_select(JournalPrompt.all, :id, :prompt_text, @user_entry.prompt_id), :class => "form-control") %>
-    <!-- Input for prompt_id end -->
   </div>
-  <!-- Label and input for prompt_id end -->
 
-  <!-- Label and input for response start -->
   <div class="form-group">
     <label for="response">
       Response
     </label>
 
-    <!-- Input for response start -->
     <input type="text" id="response" name="response" class="form-control" value="<%= @user_entry.response %>">
-    <!-- Input for response end -->
   </div>
-  <!-- Label and input for response end -->
 
-  <!-- Label and input for headline start -->
   <div class="form-group">
     <label for="headline">
       Headline
     </label>
 
-    <!-- Input for headline start -->
     <textarea id="headline" name="headline" class="form-control" rows="3"><%= @user_entry.headline %></textarea>
-    <!-- Input for headline end -->
   </div>
-  <!-- Label and input for headline end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update user entry

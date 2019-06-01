@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @journal_method.journal_prompts.each do |journal_prompt| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/journal_prompts/<%= journal_prompt.id %>">
           <%= journal_prompt.prompt_text %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_journal_prompt_from_journal_method/<%= journal_prompt.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="journal_method_journal_prompts_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "journal_method_templates/journal_method_journal_prompts_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

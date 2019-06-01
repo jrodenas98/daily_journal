@@ -11,62 +11,48 @@
         </a>
       </div>
 
-      <!-- Edit link quote start -->
       <div class="col">
         <a href="/quotes/<%= @quote.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit quote
         </a>
       </div>
-      <!-- Edit link quote end -->
 
-      <!-- Delete link quote start -->
       <div class="col">
         <a href="/delete_quote/<%= @quote.id %>" class="btn btn-block btn-outline-secondary">
           Delete quote
         </a>
       </div>
-      <!-- Delete link quote end -->
     </div>
 
     <dl>
       <dt>
         Body
       </dt>
-      <!-- Display body start -->
       <dd>
         <%= @quote.body %>
       </dd>
-      <!-- Display body end -->
 
       <dt>
         Author
       </dt>
-      <!-- Display author start -->
       <dd>
         <%= @quote.author %>
       </dd>
-      <!-- Display author end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@quote.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@quote.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->
