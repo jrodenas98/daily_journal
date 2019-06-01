@@ -1,6 +1,6 @@
 class JournalPromptsController < ApplicationController
   def index
-    @journal_prompts = JournalPrompt.all
+    @journal_prompts = JournalPrompt.page(params[:page]).per(10)
 
     render("journal_prompt_templates/index.html.erb")
   end

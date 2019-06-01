@@ -10,7 +10,7 @@ class UserEntriesController < ApplicationController
   end
 
   def index
-    @user_entries = UserEntry.all
+    @user_entries = UserEntry.page(params[:page]).per(10)
 
     render("user_entry_templates/index.html.erb")
   end

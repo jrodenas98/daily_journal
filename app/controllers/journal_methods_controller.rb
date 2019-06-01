@@ -1,6 +1,6 @@
 class JournalMethodsController < ApplicationController
   def index
-    @journal_methods = JournalMethod.all
+    @journal_methods = JournalMethod.page(params[:page]).per(10)
 
     render("journal_method_templates/index.html.erb")
   end
