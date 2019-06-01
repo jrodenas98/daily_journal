@@ -1,0 +1,37 @@
+<!-- Form journal_prompt start -->
+<form action="/create_journal_prompt_from_journal_method" method="post">
+<!-- Form journal_prompt end -->
+
+  <!-- Label and input for prompt_text start -->
+  <div class="form-group">
+    <label for="prompt_text">
+      Prompt text
+    </label>
+
+    <!-- Input for prompt_text start -->
+    <textarea id="prompt_text" name="prompt_text" class="form-control" rows="3"><%= @journal_prompt.prompt_text %></textarea>
+    <!-- Input for prompt_text end -->
+  </div>
+  <!-- Label and input for prompt_text end -->
+
+  <!-- Label and input for day start -->
+  <div class="form-group">
+    <label for="day">
+      Day
+    </label>
+
+    <!-- Input for day start -->
+    <input type="text" id="day" name="day" class="form-control" value="<%= @journal_prompt.day %>">
+    <!-- Input for day end -->
+  </div>
+  <!-- Label and input for day end -->
+
+  <!-- Label and input for journal_method_id start -->
+  <!-- Input for journal_method_id start -->
+  <input type="hidden" name="journal_method_id" value="<%= @journal_method.id %>">
+  <!-- Input for journal_method_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create journal prompt
+  </button>
+</form>

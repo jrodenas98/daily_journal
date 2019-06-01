@@ -45,6 +45,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/user_entries/new", { :controller => "user_entries", :action => "new_form" })
   post("/create_user_entry", { :controller => "user_entries", :action => "create_row" })
+  post("/create_user_entry_from_journal_prompt", { :controller => "user_entries", :action => "create_row_from_journal_prompt" })
 
   # READ
   get("/user_entries", { :controller => "user_entries", :action => "index" })
@@ -66,6 +67,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/journal_prompts/new", { :controller => "journal_prompts", :action => "new_form" })
   post("/create_journal_prompt", { :controller => "journal_prompts", :action => "create_row" })
+  post("/create_journal_prompt_from_journal_method", { :controller => "journal_prompts", :action => "create_row_from_journal_method" })
 
   # READ
   get("/journal_prompts", { :controller => "journal_prompts", :action => "index" })

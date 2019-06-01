@@ -6,6 +6,7 @@ class JournalPromptsController < ApplicationController
   end
 
   def show
+    @user_entry = UserEntry.new
     @journal_prompt = JournalPrompt.find(params.fetch("id_to_display"))
 
     render("journal_prompt_templates/show.html.erb")
@@ -28,6 +29,22 @@ class JournalPromptsController < ApplicationController
       @journal_prompt.save
 
       redirect_back(:fallback_location => "/journal_prompts", :notice => "Journal prompt created successfully.")
+    else
+      render("journal_prompt_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_journal_method
+    @journal_prompt = JournalPrompt.new
+
+    @journal_prompt.prompt_text = params.fetch("prompt_text")
+    @journal_prompt.day = params.fetch("day")
+    @journal_prompt.journal_method_id = params.fetch("journal_method_id")
+
+    if @journal_prompt.valid?
+      @journal_prompt.save
+
+      redirect_to("/journal_methods/#{@journal_prompt.journal_method_id}", notice: "JournalPrompt created successfully.")
     else
       render("journal_prompt_templates/new_form_with_errors.html.erb")
     end

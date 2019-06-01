@@ -6,6 +6,7 @@ class JournalMethodsController < ApplicationController
   end
 
   def show
+    @journal_prompt = JournalPrompt.new
     @journal_method = JournalMethod.find(params.fetch("id_to_display"))
 
     render("journal_method_templates/show.html.erb")

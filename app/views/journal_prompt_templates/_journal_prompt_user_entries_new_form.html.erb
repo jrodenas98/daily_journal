@@ -1,0 +1,49 @@
+<!-- Form user_entry start -->
+<form action="/create_user_entry_from_journal_prompt" method="post">
+<!-- Form user_entry end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @user_entry.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for prompt_id start -->
+  <!-- Input for prompt_id start -->
+  <input type="hidden" name="prompt_id" value="<%= @journal_prompt.id %>">
+  <!-- Input for prompt_id end -->
+
+  <!-- Label and input for response start -->
+  <div class="form-group">
+    <label for="response">
+      Response
+    </label>
+
+    <!-- Input for response start -->
+    <input type="text" id="response" name="response" class="form-control" value="<%= @user_entry.response %>">
+    <!-- Input for response end -->
+  </div>
+  <!-- Label and input for response end -->
+
+  <!-- Label and input for headline start -->
+  <div class="form-group">
+    <label for="headline">
+      Headline
+    </label>
+
+    <!-- Input for headline start -->
+    <textarea id="headline" name="headline" class="form-control" rows="3"><%= @user_entry.headline %></textarea>
+    <!-- Input for headline end -->
+  </div>
+  <!-- Label and input for headline end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create user entry
+  </button>
+</form>
