@@ -55,6 +55,14 @@ class JournalPromptsController < ApplicationController
     end
   end
 
+  def destroy_row_from_journal_method
+    @journal_prompt = JournalPrompt.find(params.fetch("id_to_remove"))
+
+    @journal_prompt.destroy
+
+    redirect_to("/journal_methods/#{@journal_prompt.journal_method_id}", notice: "JournalPrompt deleted successfully.")
+  end
+
   def destroy_row
     @journal_prompt = JournalPrompt.find(params.fetch("id_to_remove"))
 

@@ -57,6 +57,22 @@ class UserEntriesController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @user_entry = UserEntry.find(params.fetch("id_to_remove"))
+
+    @user_entry.destroy
+
+    redirect_to("/users/#{@user_entry.user_id}", notice: "UserEntry deleted successfully.")
+  end
+
+  def destroy_row_from_prompt
+    @user_entry = UserEntry.find(params.fetch("id_to_remove"))
+
+    @user_entry.destroy
+
+    redirect_to("/journal_prompts/#{@user_entry.prompt_id}", notice: "UserEntry deleted successfully.")
+  end
+
   def destroy_row
     @user_entry = UserEntry.find(params.fetch("id_to_remove"))
 

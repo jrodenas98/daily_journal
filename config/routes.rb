@@ -56,6 +56,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_user_entry/:id_to_remove", { :controller => "user_entries", :action => "destroy_row" })
+  get("/delete_user_entry_from_prompt/:id_to_remove", { :controller => "user_entries", :action => "destroy_row_from_prompt" })
+  get("/delete_user_entry_from_user/:id_to_remove", { :controller => "user_entries", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -75,6 +77,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_journal_prompt/:id_to_remove", { :controller => "journal_prompts", :action => "destroy_row" })
+  get("/delete_journal_prompt_from_journal_method/:id_to_remove", { :controller => "journal_prompts", :action => "destroy_row_from_journal_method" })
 
   #------------------------------
 

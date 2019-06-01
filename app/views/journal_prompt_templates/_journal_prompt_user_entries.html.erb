@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    User Entries
+
+    <a data-toggle="collapse" href="#journal_prompt_user_entries_new_form">
+      Add user entry
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @journal_prompt.user_entries.each do |user_entry| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/user_entries/<%= user_entry.id %>">
+          <%= user_entry.user_id %>
+        </a>
+        <!-- Show link end -->
+
+        <!-- Delete link start -->
+        <a href="/delete_user_entry_from_prompt/<%= user_entry.id %>">
+          Delete
+        </a>
+        <!-- Delete link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="journal_prompt_user_entries_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>
