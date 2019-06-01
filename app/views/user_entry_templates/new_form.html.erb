@@ -28,7 +28,7 @@
     </label>
 
     <!-- Input for prompt_id start -->
-    <input type="text" id="prompt_id" name="prompt_id" class="form-control">
+    <%= select_tag(:prompt_id, options_from_collection_for_select(JournalPrompt.all, :id, :prompt_text, @user_entry.prompt_id), :class => "form-control") %>
     <!-- Input for prompt_id end -->
   </div>
   <!-- Label and input for prompt_id end -->
