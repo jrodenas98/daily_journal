@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Journal method resource:
+
+  # CREATE
+  get("/journal_methods/new", { :controller => "journal_methods", :action => "new_form" })
+  post("/create_journal_method", { :controller => "journal_methods", :action => "create_row" })
+
+  # READ
+  get("/journal_methods", { :controller => "journal_methods", :action => "index" })
+  get("/journal_methods/:id_to_display", { :controller => "journal_methods", :action => "show" })
+
+  # UPDATE
+  get("/journal_methods/:prefill_with_id/edit", { :controller => "journal_methods", :action => "edit_form" })
+  post("/update_journal_method/:id_to_modify", { :controller => "journal_methods", :action => "update_row" })
+
+  # DELETE
+  get("/delete_journal_method/:id_to_remove", { :controller => "journal_methods", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Quote resource:
 
   # CREATE
