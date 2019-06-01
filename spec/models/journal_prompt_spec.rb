@@ -4,6 +4,8 @@ RSpec.describe JournalPrompt, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:journal_method) }
+
     it { should have_many(:user_entries) }
 
     end
