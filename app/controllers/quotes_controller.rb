@@ -1,6 +1,7 @@
 class QuotesController < ApplicationController
   def index
-    @quotes = Quote.page(params[:page]).per(10)
+    @q = Quote.ransack(params[:q])
+    @quotes = @q.result(:distinct => true).page(params[:page]).per(10)
 
     render("quote_templates/index.html.erb")
   end

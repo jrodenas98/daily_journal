@@ -10,7 +10,8 @@ class UserEntriesController < ApplicationController
   end
 
   def index
-    @user_entries = UserEntry.page(params[:page]).per(10)
+    @q = UserEntry.ransack(params[:q])
+    @user_entries = @q.result(:distinct => true).includes(:user, :prompt).page(params[:page]).per(10)
 
     render("user_entry_templates/index.html.erb")
   end

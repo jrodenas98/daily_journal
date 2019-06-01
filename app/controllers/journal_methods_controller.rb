@@ -1,6 +1,7 @@
 class JournalMethodsController < ApplicationController
   def index
-    @journal_methods = JournalMethod.page(params[:page]).per(10)
+    @q = JournalMethod.ransack(params[:q])
+    @journal_methods = @q.result(:distinct => true).includes(:journal_prompts).page(params[:page]).per(10)
 
     render("journal_method_templates/index.html.erb")
   end
