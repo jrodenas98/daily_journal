@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "journal_prompts#index"
   # Routes for the Journal method resource:
 
   # CREATE
